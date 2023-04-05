@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway:ital,wght@1,100&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+input{
+    height: 40px;
+    border: 2px solid rgba(99, 85, 85, 0.521);
+    padding: 10px 15px;
+}
+input:focus{
+    outline: none;
+    border: 2px solid black !important;
+}
+.primary{
+    background-color: rgb(138, 171, 182);
+    color: white;
+    border: none;
+    border-radius: 0.375rem;
+    padding: 0.75rem;
+}
+.primary:hover{
+    background-color: rgb(3 105 161)
+}
