@@ -8,7 +8,7 @@ const Protected = () => {
     const location = useLocation()
     const gert = useRef(location.state?.isAdmin)
     {gert.current ? localStorage.setItem("AdminUserToken" , true) : null } 
-    const [admin, setAdmin] = useState(localStorage.getItem("deEchteGertGeheim"))
+    const [admin, setAdmin] = useState(localStorage.getItem("AdminUserToken"))
     return admin ? <Outlet /> : <Navigate to="/login" />
 }
 
