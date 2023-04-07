@@ -6,8 +6,8 @@ import { Navigate, Outlet, useLocation } from 'react-router-dom';
 const Protected = () => {
 
     const location = useLocation()
-    const gert = useRef(location.state?.isGert)
-    {gert.current ? localStorage.setItem("deEchteGertGeheim" , true) : null } 
+    const gert = useRef(location.state?.isAdmin)
+    {gert.current ? localStorage.setItem("AdminUserToken" , true) : null } 
     const [admin, setAdmin] = useState(localStorage.getItem("deEchteGertGeheim"))
     return admin ? <Outlet /> : <Navigate to="/login" />
 }

@@ -14,15 +14,15 @@ export const login = async (req,res,next) =>{
         //create cookie on login
         const token = jwt.sign({
             id: user._id,
-            isGert: user.isSjaard,
+            isGert: user.isAdmin,
         }, process.env.JWT)
         // get password out off user object so it is not send on completion
-        const {password, isSjaard, ...info} = user._doc 
+        const {password, isAdmin, ...info} = user._doc 
         //pass cookie up the chain
         res.cookie("accessToken", token , {
             httpOnly:true
         })
-        res.status(200).send({details:{...info}, isSjaard})
+        res.status(200).send({details:{...info}, isAdmin})
     }catch(err){
         console.log(err)
     }
