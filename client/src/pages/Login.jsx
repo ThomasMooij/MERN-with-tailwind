@@ -20,10 +20,10 @@ const Login = () => {
       try{
           const guestname = guestName.toLowerCase()
           const res = await newRequest.post("/auth/login", {guestname, password})
-          if(res.data.isSjaard){
+          if(res.data.isAdmin){
               dispatch({type: "LOGIN_SUCCESS", payload: res.data.details})
-              const isGert = true
-              navigate("/admin", {state: {isSjaard}})
+              const isAdmin = true
+              navigate("/admin", {state: {isAdmin}})
           }else
         {  
           dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
