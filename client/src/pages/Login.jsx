@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import { AuthContext } from "../context/autContext"
+import { AuthContext } from "../context/authContext"
 import newRequest from "../functions/newRequest.js"
 
 const Login = () => {
